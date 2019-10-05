@@ -1,2 +1,2 @@
-# React-Boilerplate-with-JWT
+# Warstorm
 React Reading List App with JWT Auth
