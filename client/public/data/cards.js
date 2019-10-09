@@ -10,7 +10,6 @@ const cards = {
       equipment: 0,
       spells: 0
     },
-
     faction: "human"
   },
 
@@ -25,7 +24,6 @@ const cards = {
       equipment: 1,
       spells: 1
     },
-
     faction: "human",
     abilities: {
       frostbolt: 2
@@ -122,7 +120,6 @@ const cards = {
     abilities: {
       archery: true
     },
-
     army: {
       units: 5,
       equipment: 1,
@@ -140,7 +137,6 @@ const cards = {
     abilities: {
       heal: 2
     },
-
     army: {
       units: 5,
       spells: 1,
@@ -257,4 +253,5 @@ const cards = {
     }
   }
 };
+
 export default cards;
