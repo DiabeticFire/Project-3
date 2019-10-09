@@ -1,15 +1,18 @@
-// import react
+// import npm packages
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { isEmpty } from "lodash";
 
-// dummy data
-// import testDeck1 from "../../../public/testDeck1.json";
-// import testDeck2 from "../../../public/testDeck2.json";
+// import data
+import cards from "./data/cards.js";
 
 // import utils
 import playerClass from "../../utils/playerClass.js";
 
 // import components
+import Deck from "../../components/Deck/Deck.js";
+
+// import misc
 import Player from "./Player.js";
 
 class Battle extends Component {
@@ -26,8 +29,30 @@ class Battle extends Component {
 
   loadData = () => {
     // set players
-    let player1 = new playerClass([], "Joseph");
-    let player2 = new playerClass([], "Testing");
+    let player1 = new playerClass(
+      [
+        cards.LordGeneralPozak,
+        cards.HumanSoldier,
+        cards.HumanSoldier,
+        cards.HumanSoldier,
+        cards.HumanSoldier,
+        cards.HumanSoldier,
+        cards.HumanSoldier
+      ],
+      "Joseph"
+    );
+    let player2 = new playerClass(
+      [
+        cards.LordOfLyn,
+        cards.ElvenArcher,
+        cards.ElvenArcher,
+        cards.ElvenArcher,
+        cards.ElvenArcher,
+        cards.ElvenArcher,
+        cards.ShortSword
+      ],
+      "Testing"
+    );
 
     // shuffle decks
     player1.shuffle();
@@ -48,14 +73,14 @@ class Battle extends Component {
 
   turn = () => {
     // draw
-    if (this.state.activePlayer === 1) {
-    }
   };
 
   render() {
     return (
       <div>
-        <div></div>
+        {!isEmpty(this.state.player1) && (
+          <Deck cards={this.state.player1.deck.length}></Deck>
+        )}
       </div>
     );
   }
