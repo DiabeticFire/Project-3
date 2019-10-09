@@ -1,6 +1,6 @@
 import React from "react";
 
-const Jumbotron = ({ children }) => (
+const Hand = props => (
   <div
     style={{ height: 300, clear: "both", paddingTop: 120, textAlign: "center" }}
     className="jumbotron"
@@ -9,4 +9,4 @@ const Jumbotron = ({ children }) => (
   </div>
 );
 
-export default Jumbotron;
+export default Hand;

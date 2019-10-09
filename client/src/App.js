@@ -1,11 +1,14 @@
+// import react
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
+
+// import pages
 import LoginForm from "./pages/Auth/LoginForm";
 import SignupForm from "./pages/Auth/SignupForm";
-import Nav from "./components/Nav";
-import Books from "./pages/Books";
-import Detail from "./pages/Detail";
-import NoMatch from "./pages/NoMatch";
+import NoMatch from "./pages/NoMatch/NoMatch.js";
+import Battle from "./pages/Battle/Battle.js";
+
+// import utils
 import AUTH from "./utils/AUTH";
 
 class App extends Component {
@@ -66,22 +69,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.loggedIn && (
+        {!this.state.loggedIn && (
           <div>
-            <Nav user={this.state.user} logout={this.logout} />
             <div className="main-view">
               <Switch>
-                <Route
-                  exact
-                  path="/"
-                  component={() => <Books user={this.state.user} />}
-                />
-                <Route
-                  exact
-                  path="/books"
-                  component={() => <Books user={this.state.user} />}
-                />
-                <Route exact path="/books/:id" component={Detail} />
+                {/* <Route exact path="/" component={() => <Home />} /> */}
+                <Route exact path="/battle" component={() => <Battle />} />
                 <Route component={NoMatch} />
               </Switch>
             </div>
