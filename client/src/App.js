@@ -15,6 +15,9 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={() => <Home />} />
             <Route exact path="/battle" component={() => <Battle />} />
+            <Route exact path="/deckbuilder" component={() => <Home />} />
+            <Route exact path="/collection" component={() => <Home />} />
+            <Route exact path="/campaign" component={() => <Home />} />
             <Route component={NoMatch} />
           </Switch>
         </div>

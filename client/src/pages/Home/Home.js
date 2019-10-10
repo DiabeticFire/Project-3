@@ -11,16 +11,14 @@ import "./Home.css";
 class Home extends Component {
   state = {};
 
-  thing = () => console.log("THING!!!");
-
   render() {
     return (
       <div className="grid">
         <Title />
-        <MenuButton text="Play" onClick={this.thing} />
-        <MenuButton text="Deckbuilder" onClick={this.thing} />
-        <MenuButton text="Collection" onClick={this.thing} />
-        <MenuButton text="Campaign" onClick={this.thing} />
+        <MenuButton text="Play" />
+        <MenuButton text="Deckbuilder" />
+        <MenuButton text="Collection" />
+        <MenuButton text="Campaign" />
       </div>
     );
   }
