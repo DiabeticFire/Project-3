@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { isEmpty } from "lodash";
 
 // import data
-import cards from "./data/cards";
+import cards from "../../data/cards";
 
 // import utils
 import playerClass from "../../utils/playerClass.js";

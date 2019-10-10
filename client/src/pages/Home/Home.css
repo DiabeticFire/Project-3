@@ -1,0 +1,11 @@
+.title {
+  width: 300px;
+  margin: 50px auto 100px;
+  text-align: center;
+}
+
+.menuButton {
+  width: 200px;
+  margin: 10px auto;
+  display: block;
+}
