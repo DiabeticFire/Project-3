@@ -31,9 +31,7 @@ const tempDeck2 = [
   cards.ShortSword
 ];
 
-const shuffle = array => {
-  array.sort(() => Math.random() - 0.5);
-};
+const shuffle = array => array.sort(() => Math.random() - 0.5);
 
 class Battle extends Component {
   state = {
@@ -49,7 +47,7 @@ class Battle extends Component {
       battlefield: [],
       graveyard: []
     },
-    activePlayer: 0,
+    activePlayer: "",
     gameOver: false
   };
 
@@ -68,13 +66,43 @@ class Battle extends Component {
     this.setState({ player2 });
 
     // pick who goes first
-    this.setState({
-      activePlayer: Math.floor(Math.random() * 2 + 1) ? "player1" : "player2"
-    });
+    this.setState(
+      {
+        activePlayer:
+          Math.floor(Math.random() * 2 + 1) === 1 ? "player1" : "player2"
+      },
+      () => {
+        this.turn(this.state.activePlayer);
+      }
+    );
   };
 
-  turn = () => {
+  turn = activePlayer => {
+    // ensure data is loaded
+    if (typeof activePlayer !== "string") this.turn(activePlayer);
+
     // draw
+    let player = { ...this.state[activePlayer] };
+    player.hand.push(player.deck.pop());
+    this.setState({ player });
+
+    // ready
+    player = { ...this.state[activePlayer] };
+    player.hand.forEach(card => {
+      card.ready -= 1;
+      if (card.ready === 0) {
+        player.battlefield.push(
+          player.hand.splice(player.hand.indexOf(card), 1)
+        );
+      }
+    });
+
+    // battle
+    player = { ...this.state[activePlayer] };
+    player.battlefield.forEach(card => {
+      // attack
+      // abilities
+    });
   };
 
   render() {
