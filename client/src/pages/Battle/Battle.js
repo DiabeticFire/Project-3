@@ -3,10 +3,11 @@ import React, { Component } from "react";
 import { isEmpty } from "lodash";
 
 // import data
-import cards from "../../data/cards";
+import cards from "../../data/cards.js";
 
 // import components
 import Deck from "../../components/Deck/Deck.js";
+import Card from "../../components/Card/Card.js";
 
 // import css
 import "./Battle.css";
@@ -110,6 +111,9 @@ class Battle extends Component {
       <div>
         {!isEmpty(this.state.player1.deck) && (
           <Deck cards={this.state.player1.deck.length}></Deck>
+        )}
+        {!isEmpty(this.state.player1.deck) && (
+          <Card card={this.state.player1.deck[0]} />
         )}
       </div>
     );

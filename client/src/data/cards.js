@@ -1,3 +1,6 @@
+// import images
+// import HeavySoldierImg from "../images/HeavySoldier.png";
+
 const cards = {
   LordGeneralPozak: {
     name: "Lord General Pozak",
@@ -49,7 +52,7 @@ const cards = {
     abilities: {
       armor: 1
     },
-    src: "./images/HeavySoldier"
+    src: "/images/card-art/HeavySoldier.png"
   },
 
   Cavalier: {
